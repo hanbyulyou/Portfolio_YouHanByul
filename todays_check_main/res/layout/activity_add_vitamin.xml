@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddVitaminActivity"
+    android:background="@color/background_color">
+
+    <!-- 상단 고정 영역: 제목과 아이콘 -->
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        android:background="@color/light_blue">
+
+        <!-- 뒤로 가기 버튼 -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:contentDescription="Back"
+            android:src="@drawable/back_home" />
+
+
+        <!-- 앱 제목 -->
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add 'TO DO'"
+            android:textSize="32sp"
+            android:textColor="@color/icon_text"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginStart="48dp"
+            android:fontFamily="@font/ubuntu_medium"/>
+    </LinearLayout>
+
+
+    <!-- 추가 입력창 -->
+
+    <EditText
+        android:id="@+id/vitaminNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:hint="Enter 'TO DO'"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayout" />
+
+    <!-- ChipGroup for Days -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/daysChipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        app:singleLine="true"
+        app:chipSpacingHorizontal="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vitaminNameEditText">
+
+        <!-- Chips for each day of the week -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/mondayChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:checkable="true"
+            android:text="月"
+            app:chipMinHeight="32dp"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/tuesdayChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:checkable="true"
+            android:text="火"
+            app:chipMinHeight="32dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wednesdayChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:checkable="true"
+            android:text="水"
+            app:chipMinHeight="32dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/thursdayChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:checkable="true"
+            android:text="木"
+            app:chipMinHeight="32dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fridayChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:checkable="true"
+            android:text="金"
+            app:chipMinHeight="32dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/saturdayChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:checkable="true"
+            android:text="土"
+            app:chipMinHeight="32dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sundayChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:checkable="true"
+            android:text="日"
+            app:chipMinHeight="32dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+
+    <!-- 저장 버튼-->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
+        android:layout_margin="96dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_background"
+        android:text="SAVE"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daysChipGroup" />
+
+    <!-- 취소 버튼 -->
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="108dp"
+        android:layout_height="48dp"
+        android:layout_margin="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_background"
+        android:text="CANCEL"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saveButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
